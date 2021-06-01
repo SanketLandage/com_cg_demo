@@ -4,11 +4,24 @@ import java.util.Scanner;
 
 public class Excercise7 {
 	static void checkNumber(int n) {
-		int count=0;
-		for(int i=0 ; i<=n ; i++) {
+		int flag = 0;
+		int currentNumber = n % 10;
+		n = n/10;
+		while(n>0) {
+			if(currentNumber <= n%10) {
+				flag = 1;
+				break;
+			}
+			currentNumber = n %10;
+			n = n/10;
 			
 		}
-		System.out.println(count);
+		
+		if(flag == 1) {
+			System.out.println("False");
+		}else {
+			System.out.println("True");
+		}
 	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
